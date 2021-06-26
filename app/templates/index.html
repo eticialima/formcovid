@@ -1,0 +1,133 @@
+{% load widget_tweaks %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.markuptag.com/bootstrap/5/css/bootstrap.min.css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- titulo -->
+    <title>Formulario Covi19</title>
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class=" container ">
+            <!-- <a class="navbar-brand " href="# "><img src="/images/MarkupTag-white-logo.png " alt="Logo " class="img-fluid " /></a> -->
+            <button class="navbar-toggler " type="button " data-bs-toggle="collapse " data-bs-target="#navbarNavDropdown " aria-controls="navbarNavDropdown " aria-expanded="false " aria-label="Toggle navigation ">
+                <span class="navbar-toggler-icon "></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNavDropdown ">
+                <ul class="navbar-nav mx-auto ">
+                    <li class="nav-item ">
+                        <a class="nav-link active " href="# ">Home</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="# ">Sobre</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="# ">COVID-19</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="# ">Contato</a>
+                    </li>
+                </ul>
+                <div class="d-flex ">
+                    <a class="btn btn-light ms-3 " href="/">Home</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar -->
+    <!-- Background image -->
+    <div class="p-5 text-center bg-image">
+        <div class=" mask " style="background-color: rgba(0, 0, 0, 0.6) ">
+            <div class="d-flex justify-content-center align-items-center h-100 ">
+                <div class="text-white ">
+                    <h1 class="mb-3 ">Formulario COVID-19</h1>
+                    <h4 class="mb-3 ">Planilha do dia</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Background image -->
+    <!-- Titulo -->
+    <div class="col-8 m-auto pt-2 pb-2 text-center ">
+    </div>
+    <!-- Botão -->
+    <div class="col-8 m-auto pt-3 pb-2 text-center ">
+        <a href="/form " class="btn btn-success ">Formulario</a>
+    </div>
+    <!-- pesquisar -->
+    <div class="col-8 m-auto pt-3 pb-2 text-center">
+        <form method="get">
+            <input type="text" id="search" name="search" class="form-control" placeholder="Buscar...">
+        </form>
+    </div>
+    <!-- Tabela -->
+    <div class="align-content-center ">
+        <table class="table table-bordered ">
+            <thead>
+                <tr>
+                    <th scope="col ">#</th>
+                    <th scope="col ">Nome</th>
+                    <th scope="col ">Matricula</th>
+                    <th scope="col ">Empresa</th>
+                    <th scope="col ">Data</th>
+                    <th scope="col ">Pergunta 1</th>
+                    <th scope="col ">P1_Aonde?</th>
+                    <th scope="col ">Pergunta 2</th>
+                    <th scope="col ">P2_Relato</th>
+                    <th scope="col ">Sintomas</th>
+                    <th scope="col ">Outros</th>
+                    <th scope="col ">Termos</th>
+                    <th scope="col ">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Conecta com DB pra mostar na tela -->
+                {% for dbs in db %}
+                <tr>
+                    <th>{{dbs.id}}</th>
+                    <td>{{dbs.user_name}}</td>
+                    <td>{{dbs.user_matricula}}</td>
+                    <td>{{dbs.user_empresa}}</td>
+                    <td>{{dbs.user_data}}</td>
+                    <td>{{dbs.user_choices}}</td>
+                    <td>{{dbs.user_text1}}</td>
+                    <td>{{dbs.user_choices2}}</td>
+                    <td>{{dbs.user_text2}}</td>
+                    <td>{{dbs.user_doencas}}</td>
+                    <td>{{dbs.user_text3}}</td>
+                    <td>{{dbs.user_termos}}</td>
+
+                    <td>
+                        <a href="view/{{dbs.id}}/ " class="btn btn-dark ">Visualizar</a>
+                        <a href="edit/{{dbs.id}}/ " class="btn btn-primary ">Editar</a>
+                        <a href="delete/{{dbs.id}}/ " class="btn btn-danger btnDel ">Deletar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <!--   
+    <div class="pagination ">
+        {% if db.has_previous %}
+        <a href="?page={{db.previous_page_number}} ">$ </a> {% endif %} {{db.number}} {% if db.has_next %}
+        <a href="?page={{db.next_page_number}} "> > </a> {% endif %}
+    </div>-->
+
+    {% load static %}
+    <script src="{% static 'javascript.js' %} "></script>
+    <!-- Bootstrap JS -->
+    <script src="https://www.markuptag.com/bootstrap/5/js/bootstrap.bundle.min.js "></script>
+
+</body>
+
+</html>
