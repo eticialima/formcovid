@@ -11,28 +11,4 @@
  
  .bg_form {
      background: linear-gradient(to right, #2a55b1, #ffffff24);
- }
- 
- .bg-image {
-     background: linear-gradient(to right, #2a55b1, #ffffff24);
-     height: 200px;
-     background-repeat: no-repeat;
-     background-size: cover;
- }
- 
- .bg_inicio {
-     background: linear-gradient(to right, #2a55b1, #ffffff24);
-     font-family: 'Roboto', sans-serif;
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     height: 100vh;
-     overflow: hidden;
-     margin: 0;
-     padding: 20px;
- }
- 
- .jumbcar {
-     padding: 4rem 2rem;
-     background-color: #ffffff9c;
- }
+ } 
