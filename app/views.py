@@ -2,11 +2,8 @@ from django.shortcuts import render, redirect
 from app.forms import cadastroForm
 from app.models import cadastro
 from django.core.paginator import Paginator 
-# Create your views here.
+ 
 def home(request):
-    return render(request, 'inicio.html')
-
-def index(request):
     data = {}    
     search = request.GET.get('search') 
     if search:
@@ -14,7 +11,7 @@ def index(request):
     else:
         data['db'] = cadastro.objects.all()
      
-    return render(request, 'index.html', data)
+    return render(request, 'home.html', data)
 
 def form(request):
     data={}
@@ -25,7 +22,7 @@ def create(request):
     form = cadastroForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('index')
+        return redirect('home')
 
 def view(request, pk):
     data = {}
@@ -44,11 +41,11 @@ def update(request, pk):
     form = cadastroForm(request.POST or None, instance=data['db'])
     if form.is_valid():
         form.save()
-        return redirect('index')
+        return redirect('home')
 
 def delete(request, pk):
     db = cadastro.objects.get(pk=pk)
     db.delete()
-    return redirect('index')
+    return redirect('home')
 
  
