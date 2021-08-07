@@ -15,14 +15,7 @@
 <p>Construí um modelo de formulario com varios fields. Foi utilizado app widget_tweaks, multiselectfield e os proprios do django. Formulario tem uma tela inicial static para possivel implementação de login e senha. No botão Formulario é onde recebe as informações e salva no banco de dados. As informações é exibidas na tela principal em forma de planilha e nessa planilha é possivel visualizar, alterar, e deletar.</p>
 
 Video Demo <a href="https://www.youtube.com/watch?v=R9VUWtRy8F0" >AQUI</a>
-
-### Arquivos no repositorio
-* requirements.txt
-* app.pasta
-* project.pasta
-* README.md
-* git.pasta
-
+ 
 ### Como usar ? 
 <p>- Django </P> 
 
@@ -47,6 +40,7 @@ Video Demo <a href="https://www.youtube.com/watch?v=R9VUWtRy8F0" >AQUI</a>
 ### Obrigada ❤️
 <p>Qualquer duvida pode me chamar no instagram [@eticialima](https://www.instagram.com/eticialima).</p> 
 <br> 
+
 ###  buymeacoffee buymeacoffee
  
 <a  href="https://www.buymeacoffee.com/leticialima" target="_blank"><img  src="https://cdn.buymeacoffee.com/buttons/default-red.png" alt="Buy Me A Coffee" height="40" width="170" ></a>
